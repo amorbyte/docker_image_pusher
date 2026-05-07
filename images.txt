@@ -1,19 +1,393 @@
-# images.txt - 常用 Docker 镜像列表
-# 2026-05-07 北京
-
-# --- 基础镜像 ---
+# ==========================================
+# 基础系统与编程语言环境 (含最新及主流历史版本)
+# ==========================================
+# --- 基础 Linux 系统 ---
 alpine
-ubuntu:22.04
+ubuntu
+debian
+centos
+busybox
 
-# --- Web 服务 ---
-nginx:alpine
-# 支持私有库的写法
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
+# --- Node.js (当前最新LTS为24，往前推主流版本) ---
+node
+node:22
+node:20
+node:18
+node:16
+node:14
 
-# --- 数据库 ---
+# --- Python (当前最新为3.13/3.12，往前推主流版本) ---
+python
+python:3.12
+python:3.11
+python:3.10
+python:3.9
+python:3.8
+
+# --- Java / OpenJDK (当前主流LTS为21/17，往前推) ---
+eclipse-temurin
+eclipse-temurin:21
+eclipse-temurin:17
+eclipse-temurin:11
+eclipse-temurin:8
+openjdk
+openjdk:17
+openjdk:11
+openjdk:8
+
+# --- Go 语言 ---
+golang
+golang:1.22
+golang:1.21
+golang:1.20
+
+# --- PHP ---
+php
+php:8.3
+php:8.2
+php:8.1
+php:7.4
+
+# --- 其他后端语言 ---
+rust
+dotnet
+ruby
+perl
+lua
+
+# ==========================================
+# 热门 AI 与大模型应用平台 (当前顶流)
+# ==========================================
+langgenius/dify-api
+langgenius/dify-web
+langgenius/dify-sandbox
+langgenius/dify-plugin-daemon
+n8nio/n8n
+ollama/ollama
+ghcr.io/open-webui/open-webui
+langfuse/langfuse
+chromadb/chroma
+milvusdb/milvus
+
+# ==========================================
+# Web 服务器、网关与反向代理
+# ==========================================
+nginx
+nginx:stable
+nginx:1.26
+nginx:1.25
+caddy
+traefik
+openresty/openresty
+haproxy
+
+# ==========================================
+# 数据库 (关系型 & NoSQL 含主流历史版)
+# ==========================================
+# --- PostgreSQL ---
+postgres
+postgres:16
+postgres:15
+postgres:14
+postgres:13
+
+# --- MySQL ---
+mysql
+mysql:8.4
 mysql:8.0
-redis:7.0
+mysql:5.7
 
-# --- 开发环境 (指定架构示例) ---
---platform=linux/amd64 python:3.9-slim
-node:18-alpine
+# --- Redis ---
+redis
+redis:7
+redis:6
+redis/redis-stack
+
+# --- MongoDB & MariaDB ---
+mongo
+mongo:7
+mongo:6
+mongo:5
+mariadb
+mariadb:11
+mariadb:10.11
+
+# --- 其他数据库 ---
+couchdb
+neo4j
+influxdb
+timescaledb/timescaledb
+
+# ==========================================
+# 缓存、消息队列与搜索引擎
+# ==========================================
+rabbitmq
+rabbitmq:3-management
+kafka
+apache/activemq-classic
+apache/activemq-artemis
+nats
+emqx/emqx
+elasticsearch
+elasticsearch:8.17.0
+elasticsearch:7.17.0
+kibana
+logstash
+
+# ==========================================
+# 运维、监控、CI/CD 与容器管理
+# ==========================================
+portainer/portainer-ce
+portainer/portainer-agent
+jenkins/jenkins
+jenkins/jenkins:lts
+gitlab/gitlab-ce
+gitea/gitea
+sonarqube
+harbor
+goharbor/harbor-core
+trivy
+vault
+hashicorp/vault
+grafana/grafana
+prom/prometheus
+grafana/loki
+grafana/tempo
+jaegertracing/all-in-one
+fluent/fluent-bit
+
+# ==========================================
+# 对象存储、文件存储与网盘
+# ==========================================
+minio/minio
+nextcloud
+filebrowser/filebrowser
+
+# ==========================================
+# 常用网站、CMS 与前后端应用
+# ==========================================
+wordpress
+ghost
+drupal
+joomla
+strapi/strapi
+directus/directus
+apache/airflow
+metabase/metabase
+superset
+
+# ==========================================
+# 个人生产力与知识管理 (Notion/笔记替代)
+# ==========================================
+joplin/server
+ghcr.io/toeverything/affine
+b3log/siyuan
+usememos/memos
+outlinewiki/outline
+linuxserver/bookstack
+zadam/trilium
+appflowyio/appflowy
+logseq/logseq
+mattermost/focalboard
+wekan/wekan
+
+# ==========================================
+# 家庭影音、下载神器与相册 (NAS 必装)
+# ==========================================
+plexinc/pms-docker
+jellyfin/jellyfin
+emby/embyserver
+deluan/navidrome
+linuxserver/qbittorrent
+linuxserver/transmission
+p3terx/aria2-pro
+photoprism/photoprism
+immich/immich
+linuxserver/piwigo
+bbilly1/tubearchivist
+alexta69/metube
+linuxserver/radarr
+linuxserver/sonarr
+
+# ==========================================
+# 实用工具与文件管理
+# ==========================================
+umami-software/umami
+pawelmalak/flame
+adminer
+phpmyadmin/phpmyadmin
+rediscommander/redis-commander
+linuxserver/heimdall
+
+# ==========================================
+# 安全、极客与趣味 (偏门/好玩/黑客风)
+# ==========================================
+wagoodman/dive
+aquasec/trivy
+OWASP/zap2docker-stable
+sectools/hydra
+sectools/nmap
+sectools/metasploit
+kalilinux/kali-rolling
+parrotsec/security
+hackerone/h1ctf
+tryhackme/thm-ctf
+kimai/kimai
+
+# ==========================================
+# Bitnami 标准化应用镜像补充 (适合环境测试)
+# ==========================================
+bitnami/kafka
+bitnami/zookeeper
+bitnami/redis
+bitnami/postgresql
+bitnami/mysql
+bitnami/nginx
+bitnami/node
+bitnami/python
+bitnami/golang
+bitnami/java
+bitnami/php
+bitnami/ruby
+bitnami/dotnet-core
+bitnami/rust
+bitnami/erlang
+bitnami/elixir
+bitnami/haskell
+bitnami/julia
+bitnami/perl
+bitnami/r
+bitnami/swift
+bitnami/flutter
+bitnami/unity
+bitnami/godot
+bitnami/yarn
+bitnami/npm
+bitnami/pnpm
+bitnami/bun
+bitnami/deno
+bitnami/webpack
+bitnami/rollup
+bitnami/parcel
+bitnami/vite
+bitnami/esbuild
+bitnami/swc
+bitnami/babel
+bitnami/typescript
+bitnami/clojure
+bitnami/fsharp
+bitnami/visualbasic
+bitnami/assembly
+bitnami/c
+bitnami/cpp
+bitnami/fortran
+bitnami/pascal
+bitnami/haxe
+bitnami/nim
+bitnami/crystal
+bitnami/d
+bitnami/ocaml
+bitnami/reason
+bitnami/rescript
+bitnami/gleam
+bitnami/zig
+
+# ==========================================
+# 微服务、高级网关与安全防火墙
+# ==========================================
+# --- 微服务核心组件 ---
+nacos/nacos-server
+
+# --- 高级 API 网关 ---
+apache/apisix
+kong/kong-gateway
+
+# --- 防火墙与安全防护 (WAF/安全引擎) ---
+owasp/modsecurity-crs
+crowdsecurity/crowdsec
+vaultwarden/server
+
+# --- RabbitMQ 补充 (更轻量的 Alpine 版本及主流 LTS) ---
+rabbitmq:4.2-management-alpine
+rabbitmq:4.1-management-alpine
+rabbitmq:3.13-management
+
+# ==========================================
+# 分布式协调、备份与进阶中间件
+# ==========================================
+# --- 分布式协调与注册中心 (微服务必备) ---
+hashicorp/consul
+bitnami/consul
+etcd-io/etcd
+apache/zookeeper
+
+# --- 数据库备份神器 (强烈推荐) ---
+databacker/mysql-backup
+prodrigestivill/postgres-backup-local
+
+# --- 进阶缓存与内存数据库 ---
+memcached
+keydb
+
+# --- 消息队列补充 (阿里开源金融级) ---
+apache/rocketmq
+
+# --- 日志与指标采集 (轻量级) ---
+grafana/promtail
+timberio/vector
+
+# --- 边缘计算与物联网 (IoT) ---
+eclipse-mosquitto
+emqx/ekuiper
+
+# --- 其他常用工具与数据库 ---
+adminmongo
+influxdb:2.7
+telegraf
+
+# ==========================================
+# 网络诊断、系统排错与开发测试工具
+# ==========================================
+# --- 网络诊断与基础排错工具箱 ---
+nicolaka/netshoot
+busybox
+alpine/net-tools
+
+# --- 传统企业级综合监控 ---
+zabbix/zabbix-server-mysql
+zabbix/zabbix-web-nginx-mysql
+
+# --- 容器与主机指标采集 ---
+google/cadvisor
+prom/node-exporter
+
+# --- 开发测试与调试必备 ---
+redis:7.2
+redis:6.2
+sonatype/nexus3
+jupyter/base-notebook
+
+# --- 传统企业文件存储 ---
+delron/fastdfs
+chrislusf/seaweedfs
+
+# ==========================================
+# Prometheus 监控全家桶
+# ==========================================
+# --- Prometheus 核心服务 ---
+prom/prometheus
+
+# --- 告警管理器 (Prometheus 最佳拍档) ---
+prom/alertmanager
+
+# --- 官方指标采集器 (覆盖各种场景) ---
+prom/node-exporter
+prom/blackbox-exporter
+prom/pushgateway
+prom/snmp-exporter
+prom/mysqld-exporter
+prom/postgres-exporter
+prom/redis-exporter
+
+# --- 官方周边工具 ---
+prom/promtool
