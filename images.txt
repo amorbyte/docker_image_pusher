@@ -29,9 +29,6 @@ eclipse-temurin:21
 eclipse-temurin:17
 eclipse-temurin:11
 eclipse-temurin:8
-openjdk:17
-openjdk:11
-openjdk:8
 
 # --- Go 语言 ---
 golang
