@@ -5,7 +5,6 @@
 alpine
 ubuntu
 debian
-centos
 busybox
 
 # --- Node.js (当前最新LTS为24，往前推主流版本) ---
