@@ -1,6 +1,19 @@
-nginx
-#支持私库
+# images.txt - 常用 Docker 镜像列表
+# 2026-05-07 北京
+
+# --- 基础镜像 ---
+alpine
+ubuntu:22.04
+
+# --- Web 服务 ---
+nginx:alpine
+# 支持私有库的写法
 k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
-nginx/alist:latest
-#支持指定架构
---platform=linux/arm64 xiaoyaliu/alist
+
+# --- 数据库 ---
+mysql:8.0
+redis:7.0
+
+# --- 开发环境 (指定架构示例) ---
+--platform=linux/amd64 python:3.9-slim
+node:18-alpine
